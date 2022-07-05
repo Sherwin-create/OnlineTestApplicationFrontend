@@ -1,0 +1,44 @@
+<mat-card *ngIf="user">
+  <h2>Your profile details</h2>
+  <!-- {{user | json}} -->
+  <mat-card-content>
+    <div class="bootstrap-wrapper">
+      <div class="container">
+        <div class="container text-center">
+          <img
+            src="../../../assets/pngwing.com.png"
+            alt=""
+            class="profile-image responsive-img"
+          />
+          <h1 class="mt20">{{ user.firstName }} {{ user.lastName }}</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <table class="table text-center">
+              <tr>
+                <td>Username</td>
+                <td>{{ user.username }}</td>
+              </tr>
+              <tr>
+                <td>UserId</td>
+                <td>{{ user.id }}</td>
+              </tr>
+              <tr *ngIf="user.phone">
+                <td>Phone</td>
+                <td>{{ user.phone }}</td>
+              </tr>
+              <tr>
+                <td>Role</td>
+                <td>{{ user.authorities[0].authority }}</td>
+              </tr>
+              <tr>
+                <td>Status</td>
+                <td>{{ user.enabled }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

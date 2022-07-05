@@ -1,0 +1,48 @@
+<div class="bootsrap-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title class="mt20">
+              Read the instruction carefully
+            </mat-card-title>
+            <mat-card-subtitle> One Step more to go </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content ml20>
+            <h2>{{ quiz.title }}</h2>
+            <p>{{ quiz.description }}</p>
+            <mat-divider></mat-divider>
+            <br />
+
+            <h3>Important Instructions</h3>
+            <ul>
+              <li>This quiz is only for practice purpose</li>
+              <li>Helps you to grap the knowledge</li>
+              <li>don't cheat it's for your own good</li>
+              <li>You can attempt the quiz any number of time.</li>
+              <li>
+                There are
+                <strong>{{ quiz.numberOfQuestions }}</strong> questions
+              </li>
+              <li>
+                Each question carries
+                {{ quiz.maxMarks / quiz.numberOfQuestions }} marks
+              </li>
+              <li>No negative marking for wrong answer</li>
+            </ul>
+          </mat-card-content>
+          <mat-card-actions class="text-center">
+            <button
+              [routerLink]="'/start/' + qid"
+              mat-raised-button
+              color="warn"
+            >
+              Start Quiz
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
